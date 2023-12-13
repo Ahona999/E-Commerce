@@ -1,0 +1,22 @@
+<!-- Create-catalog.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Catalog</title>
+</head>
+<body>
+    <h2>Create Catalog</h2>
+    <form method="POST" action="/api/seller/create-catalog">
+        <label for="name">Seller Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="items">List of Items:</label>
+        <textarea id="items" name="items" required></textarea>
+        <button type="submit">Create Catalog</button>
+
+        <a href="https://localhost:8000/api/seller/orders">Check Orders</a>
+</body>
+</html>

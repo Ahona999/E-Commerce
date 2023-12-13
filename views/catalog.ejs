@@ -1,0 +1,33 @@
+<!-- catalog.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - List of Items By Seller</title>
+</head>
+<body>
+    <h2>Here is your product catalog By <%= seller.name %>:- </h2>
+    <p>Seller ID: <%= seller.seller_id %></p>
+    <p>Seller name: <%= seller.name %></p>
+    
+    <h4>Items:</h4>
+    <div>
+        <form method="POST" action="/api/buyer/create-order/<%= seller.seller_id %>">
+            <ul>
+                <% seller.items.forEach(function(item) { %>
+                    <li>
+                        <input type="checkbox" name="items[]" value="<%= item %>">
+                        <label><b><%= item %></b></label>
+                    </li>
+                <% }); %>
+            </ul>
+            <button type="submit">Add Selected Items to Cart</button>
+        </form>
+    </div>
+</body>
+</html>
+
+                 
+      

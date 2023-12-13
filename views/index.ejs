@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller List</title>
+    <link rel="stylesheet" href="/public/style.css" />
+</head>
+<body>
+    <h2>List Of Sellers :-</h2>
+        <% for (let seller of sellers) { %>
+                <h3> <%= seller.seller_id %> </h3>
+                <h4> @<%= seller.name %> </h4>
+                <a href="http://localhost:8000/api/buyer/seller-catalog/<%= seller.seller_id %>">Show Seller Catalog</a>
+        <% } %>    
+</body>
+</html>
